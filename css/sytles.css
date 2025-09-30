@@ -7,6 +7,11 @@
             padding: 0;
             box-sizing: border-box;
         }
+        img{
+        max-width: 100%; 
+        height: auto;
+
+    }
  .thumb {
       display: inline-block;      /* permite usar text-align del padre */
       border: 4px solid #e0e0e0;  /* borde tipo marco */

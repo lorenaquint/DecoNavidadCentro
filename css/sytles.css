@@ -258,12 +258,19 @@
         }
 
         /* Items Grid */
-        .items-grid {
+        .items-grid, .items-grid-fr {
             display: grid;
-            /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-             grid-template-columns: 1fr 1fr;
+           
+          
             gap: 30px;
             margin: 40px 0;
+        }
+        .items-grid-fr {
+               grid-template-columns: 1fr 1fr;
+
+        }
+        .items-grid {
+             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
         }
 
         .item-card {
@@ -477,6 +484,6 @@
             .hero h1 { font-size: 36px; }
             .hero .subtitle { font-size: 20px; }
             .section-title { font-size: 32px; }
-            .items-grid { grid-template-columns: 1fr; }
+            .items-grid,.items-grid-fr { grid-template-columns: 1fr; }
             .feature-grid { grid-template-columns: 1fr; }
         }

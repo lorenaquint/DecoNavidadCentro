@@ -551,7 +551,7 @@
             margin-left: 10px;
         }
 
-        
+
 
         @media (max-width: 768px) {
            
@@ -656,3 +656,127 @@
             .items-grid,.items-grid-fr { grid-template-columns: 1fr; }
             .feature-grid { grid-template-columns: 1fr; }
         }
+        /* Estilos para imprimir en pdf */
+        /* Estilos para impresión PDF */
+@media print {
+    @page {
+        margin: 1cm;
+        size: A4 portrait;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* Evitar que elementos se corten */
+    .item-card, 
+    .section,
+    .concepto-box,
+    .quote-section,
+    .impact-card,
+    .impact-section,
+    .cta-section,
+    .table-wrapper,
+    .feature-card {
+        page-break-inside: avoid;
+    }
+
+    /* Configuración para imágenes - CRÍTICO */
+    img {
+        max-height: 22cm !important;
+        max-width: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        display: block;
+        margin: 0.5cm auto;
+        object-fit: contain;
+    }
+
+    /* Contenedores de imágenes */
+    .thumb {
+        page-break-inside: avoid;
+        margin: 0.3cm 0;
+        box-shadow: none;
+    }
+
+    .center {
+        page-break-inside: avoid;
+    }
+
+    /* Forzar colores en elementos con fondo */
+    thead,
+    .total-row,
+    .summary-card,
+    .concepto-box,
+    .quote-section,
+    .cta-section,
+    .hero {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color-adjust: exact;
+    }
+
+    /* Quitar sombras */
+    .section,
+    .item-card,
+    .table-wrapper,
+    .summary-card,
+    .feature-card,
+    .impact-card,
+    .concepto-box,
+    .cta-section {
+        box-shadow: none;
+    }
+
+    /* Ocultar scroll indicator */
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Ajustar hero para impresión */
+    .hero {
+        min-height: auto;
+        padding: 30px 20px;
+    }
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    /* Ajustar tamaños de fuente */
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero .subtitle {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    /* Optimizar grids para impresión */
+    .feature-grid,
+    .items-grid-fr {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .concepto-details {
+        grid-template-columns: 1fr 1fr;
+    }
+}
